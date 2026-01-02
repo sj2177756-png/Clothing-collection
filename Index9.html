@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="product">
+        <img src="80de17bef274e07e137b6b8397370e90.jpg" alt="Product 1" class="product-img">
+        <div class="product-info">
+            <p class="product-name">Product 1</p>
+            <p class="product-price">₹499</p>
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+        </div>
+    </div>
+
+    <!-- Add more products similarly -->
+
+    <script>
+        // JavaScript to handle image click and expand
+        const images = document.querySelectorAll('.product-img');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                // Toggle the expanded class
+                image.classList.toggle('expanded');
+            });
+        });
+    </script>
+
+<head>
+    <link rel="stylesheet" href="Style9.css">
+</head>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Product List</h2>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search products...">
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid" id="productGrid">
+        <div class="product" data-name="Product 1">
+            <img src="https://via.placeholder.com/300x300" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>₹500</p>
+        </div>
+
+        <div class="product" data-name="Product 2">
+            <img src="https://via.placeholder.com/300x300" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>₹650</p>
+        </div>
+
+        <div class="product" data-name="Product 3">
+            <img src="https://via.placeholder.com/300x300" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>₹450</p>
+        </div>
+
+        <div class="product" data-name="Product 4">
+            <img src="https://via.placeholder.com/300x300" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>₹700</p>
+        </div>
+
+        <div class="product" data-name="Product 5">
+            <img src="https://via.placeholder.com/300x300" alt="Product 5">
+            <h3>Product 5</h3>
+            <p>₹550</p>
+        </div>
+
+        <div class="product" data-name="Product 6">
+            <img src="https://via.placeholder.com/300x300" alt="Product 6">
+            <h3>Product 6</h3>
+            <p>₹800</p>
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const products = document.querySelectorAll('.product');
+
+        searchInput.addEventListener('input', function() {
+            const filter = searchInput.value.toLowerCase();
+
+            products.forEach(product => {
+                const name = product.getAttribute('data-name').toLowerCase();
+                if (name.includes(filter)) {
+                    product.style.display = '';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
